@@ -42,3 +42,17 @@ export const postLogin = async (data) => {
       throw error;
     }
   };
+
+  export const updateUser = async (userId, userData) => {
+    try {
+      const response = await axios.put(`https://your-api-endpoint.com/users/${userId}`, userData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      return response.data;
+    } catch (error) {
+      console.error("Error updating user:", error);
+      throw error;
+    }
+  };
